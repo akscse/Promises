@@ -22,21 +22,3 @@ function getValue(){
       document.querySelector("#showjson p").innerHTML = err;
     });
 }
-
-function getValueComment(){
-  debugger;
-      let xhttp = new XMLHttpRequest();
-      xhttp.open("GET", "http://localhost:3000/get/json", true);
-      xhttp.onload = () => {
-        debugger;
-        if(xhttp.status == 200){
-          document.querySelector("#showjson p").innerHTML = xhttp.response;
-        } else {
-          document.querySelector("#showjson p").innerHTML = xhttp.statusText;
-        }
-      };
-      xhttp.onerror = () => {
-        document.querySelector("#showjson p").innerHTML = xhttp.statusText;
-      };
-      xhttp.send();
-}
